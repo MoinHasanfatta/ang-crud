@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { StudentCrud } from './student-crud/student-crud';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [StudentCrud],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

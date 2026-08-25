@@ -1,0 +1,140 @@
+.crud-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f4f6fb;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #2b2d89;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ---------- FORM ---------- */
+.student-form {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 35px;
+}
+
+.student-form h2 {
+  color: darkblue;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.form-row input {
+  padding: 10px 14px;
+  border: 2px solid #d0d4e4;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: darkblue;
+  box-shadow: 0 0 0 3px rgba(0, 0, 139, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background: darkblue;
+  color: antiquewhite;
+}
+
+.btn-secondary {
+  background: #b0b3c6;
+  color: white;
+}
+
+.btn-edit {
+  background: #ffb703;
+  color: #2b2d2d;
+  margin-right: 8px;
+}
+
+.btn-delete {
+  background: #e63946;
+  color: white;
+}
+
+/* ---------- TABLE ---------- */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.student-table thead {
+  background: darkblue;
+  color: antiquewhite;
+}
+
+.student-table th,
+.student-table td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.student-table tbody tr {
+  border-bottom: 1px solid #eceef5;
+  transition: background 0.2s ease;
+}
+
+.student-table tbody tr:hover {
+  background: #eef1fb;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}

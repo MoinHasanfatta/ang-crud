@@ -1,0 +1,86 @@
+<div class="crud-container">
+  <h1>🎓 Student CRUD</h1>
+
+  <!-- FORM: used for both Add and Edit -->
+  <form class="student-form" (ngSubmit)="onSubmit()">
+    <h2>{{ editingId() === null ? 'Add Student' : 'Edit Student' }}</h2>
+
+    <div class="form-row">
+      <label>Name</label>
+      <input
+        type="text"
+        [ngModel]="form().name"
+        name="name"
+        (ngModelChange)="updateField('name', $event)"
+        placeholder="Enter name"
+      />
+    </div>
+
+    <div class="form-row">
+      <label>Email</label>
+      <input
+        type="email"
+        [ngModel]="form().email"
+        name="email"
+        (ngModelChange)="updateField('email', $event)"
+        placeholder="Enter email"
+      />
+    </div>
+
+    <div class="form-row">
+      <label>Marks</label>
+      <input
+        type="number"
+        [ngModel]="form().marks"
+        name="marks"
+        (ngModelChange)="updateField('marks', $event)"
+        placeholder="Enter marks"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">
+        {{ editingId() === null ? 'Add' : 'Update' }}
+      </button>
+
+      <!-- only show cancel button while editing -->
+      @if (editingId() !== null) {
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">
+          Cancel
+        </button>
+      }
+    </div>
+  </form>
+
+  <!-- TABLE: lists all students -->
+  <table class="student-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Marks</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- new @for control flow syntax, "track" is required -->
+      @for (student of students(); track student.id) {
+        <tr>
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.marks }}</td>
+          <td class="actions-cell">
+            <button class="btn btn-edit" (click)="onEdit(student)">Edit</button>
+            <button class="btn btn-delete" (click)="onDelete(student.id)">Delete</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5" class="no-data">No students found</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
